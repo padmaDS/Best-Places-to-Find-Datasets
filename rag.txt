@@ -1,0 +1,99 @@
+topic modeling: eda using different topic modeling techniques to understand text corpus(tweets, reviews, product description etc):
+
+for topic modeling, I will follow the below steps:
+Here we are assuming that, we have collected the data already.
+Preprocessing is very important here, since our collected data is not clear which consists of combination of letters, numbers, symbols etc.
+1. Preprocessing the data
+	a. Removing the numbers, special symbols, html tags if any.
+	b. lower the text
+	c. tokenization
+	d. stopwords
+	e. Stemming or lemmatization
+2. EDA : will develop a word cloud, from which we can able to visualize which word is repeating many times
+3. Will perform bi-gram, tri-gram or n-gram analysis, to know about the common phrases. 
+
+Now our data is ready for model building. 
+
+Semantic search: how do we develop a semantic search engine which understand the user query and understands
+
+Semantic search is mainly works on Analyzing, understanding the intent and contextual meaning of user querie and representing the content of documents semantically.
+Since this is a text data, we need to perform all preprocessing techniques to clean the data.(Which includes normalizing the data)
+1. First we have to convert our entire text data into embeddings.
+2. Store those embeddings into a vector databses.
+2. Once the user ask the query, first it will convert into embeddings.
+4. based on similarity measurement, user query embeddings, matches the text embeddings of the data, then it will retrieve the answer based on k-nearest neighbour.
+
+question-answering: retrieval based question n answering system. how do you design and architect the qna systems that can responds to the user question.
+
+Designing a retrieval-based question-answering (QA) system involves creating a system that can effectively understand user queries and retrieve the most relevant information from a pre-defined set of documents or a knowledge base. Below is a structured approach to architecting a retrieval-based QA system.
+
+1. Overview of Retrieval-Based QA Systems
+Retrieval-based QA systems focus on searching through a set of documents to find the best possible answer to a user's question, rather than generating answers from scratch. This involves:
+
+Understanding the user’s question.
+Retrieving relevant documents or passages.
+Extracting answers from these documents.
+2. Key Components
+Data Collection: Gather a corpus of documents or a knowledge base.
+Question Processing: Preprocess and understand user questions.
+Document Retrieval: Find relevant documents based on the question.
+Answer Extraction: Extract the answer from the retrieved documents.
+User Interface: Design an interface for user interaction.
+3. Steps to Design and Architect a Retrieval-Based QA System
+A. Data Collection
+Document Corpus: Collect a set of documents relevant to the domain of interest (e.g., FAQs, articles, manuals).
+Knowledge Base: Optionally, create a structured knowledge base for quick lookups.
+B. Text Processing
+Data Preprocessing:
+
+Clean and normalize the text data by removing unnecessary characters and formatting.
+Tokenization, stemming, and lemmatization to prepare text for analysis
+
+C. Question Processing
+User Query Handling:
+
+Similar to document preprocessing, clean and normalize the user query.
+You may also want to implement a mechanism for query expansion to improve retrieval accuracy.
+
+D. Document Retrieval
+Vector Representation:
+
+Convert both documents and user queries into vector embeddings using models like TF-IDF, Word2Vec, BERT, or Sentence Transformers.
+Indexing:
+
+Use a library like Faiss or Annoy to create an index of document embeddings for efficient similarity searches.
+Retrieving Relevant Documents:
+
+When a query is made, search the index to find the top N most similar documents.
+
+E. Answer Extraction
+Answer Extraction Techniques:
+
+Use techniques like Named Entity Recognition (NER) or keyword extraction to identify potential answers in the retrieved documents.
+You can also apply more advanced models like BERT or other transformer models fine-tuned for QA tasks.
+Selecting the Best Answer:
+
+Use heuristics or scoring methods (e.g., confidence scores from the extraction model) to select the best answer from the potential answers.
+F. User Interface
+Designing the UI:
+
+Create a simple and intuitive interface (web or mobile) where users can enter their queries and view answers.
+Consider using frameworks like Flask or Django for web applications.
+G. Evaluation and Improvement
+Testing and Validation:
+
+Test the system with a set of sample questions and evaluate the quality of the answers returned.
+Collect user feedback to refine the document retrieval and answer extraction processes.
+Performance Metrics:
+
+Use metrics like precision, recall, F1 score, or user satisfaction ratings to measure the effectiveness of the system.
+4. Example Use Cases
+Customer Support: Automate responses to frequently asked questions in customer service applications.
+Education: Provide quick answers to student queries based on course material.
+Knowledge Management: Assist employees in finding relevant information in company documentation.
+5. Advanced Enhancements
+Contextual Understanding: Implement a context-aware component to maintain conversation state, allowing for follow-up questions.
+Feedback Loops: Utilize user interactions to continuously improve the retrieval and extraction processes.
+Multi-modal Inputs: Extend the system to handle various input types, such as voice queries or images, using speech recognition or image processing techniques.
+Conclusion
+A retrieval-based question-answering system combines several key components, including effective data collection, preprocessing, embedding, and user interface design. By leveraging state-of-the-art NLP techniques and user feedback, you can create a robust system capable of delivering accurate and contextually relevant answers to user queries.
